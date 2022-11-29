@@ -11,9 +11,9 @@ segments::k8s() {
   fi
 
   if [[ -z $namespace || "$SEGMENTS_K8S_HIDE_CLUSTER" -eq 1 ]]; then
-    segment="${context}"
+    segment="⊛ ${context}"
   else
-    segment="${context}/${namespace}"
+    segment="⊛ ${context}/${namespace}"
   fi
 
   print_themed_segment 'normal' "${segment,,}"

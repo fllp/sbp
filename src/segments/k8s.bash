@@ -10,10 +10,12 @@ segments::k8s() {
     namespace='default'
   fi
 
+  local segment_icon_char="${SEGMENTS_K8S_ICON:-⎈}"
+
   if [[ -z $namespace || "$SEGMENTS_K8S_HIDE_CLUSTER" -eq 1 ]]; then
-    segment="⊛ ${context}"
+    segment="${segment_icon_char} ${context}"
   else
-    segment="⊛ ${context}/${namespace}"
+    segment="${segment_icon_char} ${context}/${namespace}"
   fi
 
   print_themed_segment 'normal' "${segment,,}"
